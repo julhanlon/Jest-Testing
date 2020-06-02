@@ -1,4 +1,4 @@
-const { add } = require("../util/util");
+const { add, minus } = require("../util/util");
 
 describe("Add", () => {
   describe("Sucess", () => {
@@ -6,10 +6,16 @@ describe("Add", () => {
       expect(add(2, 2)).toBe(4);
     });
   });
-});
 
-describe("Failure", () => {
-  it("Should throw an error if 1st argument isn't a string", () => {
-    expect(() => add("2", 2)).toThrowError();
+  describe("Failure", () => {
+    it("Should throw an error if 1st argument isn't a string", () => {
+      expect(() => add("2", 2)).toThrowError();
+    });
+
+    it("Should throw an error if 2nd argument isn't a string", () => {
+      expect(() => add(2, "2")).toThrowError();
+    });
   });
 });
+
+describe("Minus", () => {});
